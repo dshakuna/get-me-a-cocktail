@@ -5,7 +5,7 @@
 - `node -v` : `>= 20.x`
 - `npm -v` : `>= 10.x`
 
-If not install use [NVM](https://github.com/nvm-sh/nvm#install--update-script) to install `NodeJs`
+If not installed use [NVM](https://github.com/nvm-sh/nvm#install--update-script) to install `NodeJs`
 
 ## Run the project
 
@@ -20,8 +20,9 @@ If not install use [NVM](https://github.com/nvm-sh/nvm#install--update-script) t
 
 ### Platforms
 
-- [Render](https://render.com)
-- [Netlify](https://www.netlify.com/)
+- [Render](https://vitejs.dev/guide/static-deploy.html#render)
+- [Netlify](https://vitejs.dev/guide/static-deploy.html#netlify)
+- [Cloudflare pages](https://vitejs.dev/guide/static-deploy.html#cloudflare-pages)
 
 ## Create this project again
 
