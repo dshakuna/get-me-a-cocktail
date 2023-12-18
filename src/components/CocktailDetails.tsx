@@ -1,3 +1,3 @@
 export function CocktailDetails(){
-    return <h1>Hola</h1>
+    return <h1>TEST</h1>
 }
