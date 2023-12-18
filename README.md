@@ -7,6 +7,10 @@
 
 If not installed use [NVM](https://github.com/nvm-sh/nvm#install--update-script) to install `NodeJs`
 
+- `nvm install 20.10.0`
+
+
+
 ## Run the project
 
 - `npm install` : Install all dependencies described in `package.json`
