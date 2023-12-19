@@ -1,4 +1,4 @@
-interface Drink {
+export interface Drink {
     idDrink: string;
     strDrink: string;
     strDrinkAlternate: null | string;
@@ -24,7 +24,7 @@ interface Drink {
     strMeasure3: string;
     strMeasure4: null | string;
     // Continue for other measures if necessary
-    strImageSource: null | string;
+    strImageSource?:  string;
     strImageAttribution: null | string;
     strCreativeCommonsConfirmed: string;
     dateModified: string;
@@ -35,10 +35,9 @@ interface DrinksData {
 }
 
 
-async function geRandomCocktail(): Promise<DrinksData>{
+export async function getRandomCocktail(): Promise<DrinksData>{
     const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
-    const cocktail = await response.json();
-    console.log(cocktail);
-    return cocktail
-  }
+    return await response.json()
+}
+
   
