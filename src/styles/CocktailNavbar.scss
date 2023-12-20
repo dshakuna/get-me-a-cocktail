@@ -1,0 +1,21 @@
+
+.navbar {
+    background-color: black;
+    transition: background-color 0.3s;
+  
+    .navbar-brand {
+      img {
+        width: 100px; 
+        transition: width 0.3s;
+      }
+    }
+  
+    &.shrink {
+  
+      .navbar-brand {
+        img {
+          width: 50px; 
+        }
+      }
+    }
+  }
