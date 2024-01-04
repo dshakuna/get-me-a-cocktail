@@ -1,13 +1,31 @@
 import { CocktailNavbar } from './components/CocktailNavbar'; // Importa CocktailNavbar
-import { CocktailDetails } from './components/CocktailDetails';
+import { CocktailList } from './components/CocktailList';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { CocktailDetail } from './components/CocktailDetail';
+
+
 
 function App() {
-  return (
-    <div>
-      <CocktailNavbar /> 
-      <CocktailDetails />
-    </div>
-  );
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <span>Home page!</span>,
+    },
+    {
+      path: "/cocktails",
+      element: <CocktailList />
+    },
+    {
+      path: "/cocktails/:cocktailId",
+      element: <CocktailDetail/>
+    }
+  ]);
+
+  return <RouterProvider router={router} />
 }
 
 export default App;

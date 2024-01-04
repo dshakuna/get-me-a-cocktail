@@ -33,6 +33,8 @@ If not installed use [NVM](https://github.com/nvm-sh/nvm#install--update-script)
 [Documentation](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 
 - `npm create vite@latest get-me-a-cocktail -- --template react-ts` 
+- Update `package.json` and include `"start": "vite"`
+- Then `npm start` should work
 
 ## Api
 

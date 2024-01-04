@@ -8,7 +8,7 @@ import { Drink, DrinksData } from "../service/model/Drinks.ts";
 import { getCocktailDetails } from "../service/get-cocktail-details.ts";
 import { CocktailCard } from "./CocktailCard.tsx";
 
-export function CocktailDetails() {
+export function CocktailList() {
     const [isLoading, setIsLoading] = useState(false);
     const [cocktails, setCocktails] = useState<Drink[]>([]);
     const [frozenCocktail, setFrozenCocktail] = useState<DrinksData>({drinks: []});

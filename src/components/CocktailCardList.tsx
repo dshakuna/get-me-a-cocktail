@@ -12,7 +12,7 @@ export function CocktailCardList({ cocktails }: Props) {
     return (
         <Container>
             {cocktails.map(cocktail => (
-                <CocktailCard thumbnail={cocktail.strDrinkThumb} title={cocktail.strDrink} key={cocktail.idDrink} />
+                <CocktailCard thumbnail={cocktail.strDrinkThumb} title={cocktail.strDrink} cocktailId={cocktail.idDrink} key={cocktail.idDrink} />
             ))}
         </Container>
     )
