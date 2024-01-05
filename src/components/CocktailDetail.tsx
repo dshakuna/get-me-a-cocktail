@@ -4,6 +4,7 @@ import { getCocktailDetails } from "../service/get-cocktail-details";
 import { useEffect, useState } from "react";
 import { DrinksData } from "../service/model/Drinks";
 import { CocktailDetailCard } from "./CocktailDetailCard";
+import CocktailNavbar from './CocktailNavbar'; 
 
 export function CocktailDetail() {
     const { cocktailId } = useParams();
@@ -37,7 +38,7 @@ export function CocktailDetail() {
     if (error) {
         return (
             <div className="alert alert-danger" role="alert">
-                Hubo un error invocando el api: {error}
+                Hubo u invocando el api: {error}
             </div>
         )
     }
@@ -50,5 +51,11 @@ export function CocktailDetail() {
         )
     }
 
-    return <CocktailDetailCard cocktail={cocktail.drinks[0]} />
+    return (
+        <>
+            <CocktailNavbar />
+            <CocktailDetailCard cocktail={cocktail.drinks[0]} />
+        </>
+    )
+   
 }

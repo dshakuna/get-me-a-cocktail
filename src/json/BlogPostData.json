@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Todo sobre los cócteles Margarita",
+        "content": "Aca va el contenido del artículo...",
+        "date": "2024-01-05"
+    },
+    {
+        "id": 2,
+        "title": "Cocteles Martini",
+        "content": "Aca va el contenido del artículo...",
+        "date": "2024-01-10"
+    }
+]

@@ -8,12 +8,15 @@ type Props = {
 }
 
 export function CocktailCardList({ cocktails }: Props) {
-
     return (
+        <>
         <Container>
             {cocktails.map(cocktail => (
-                <CocktailCard thumbnail={cocktail.strDrinkThumb} title={cocktail.strDrink} cocktailId={cocktail.idDrink} key={cocktail.idDrink} />
+                <CocktailCard cocktail={cocktail} key={cocktail.idDrink} />
             ))}
         </Container>
+        </>
     )
 }
+
+
