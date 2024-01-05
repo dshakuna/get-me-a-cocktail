@@ -9,6 +9,12 @@
         "id": 2,
         "title": "Cocteles Gin papa",
         "content": "Aca va el contenido del artículo...",
-        "date": "2024-01-10"
+        "date": "2024-01-03"
+    },
+    {
+        "id": 3,
+        "title": "Cocteles Gin asd",
+        "content": "Aca va el contenido del artículo...",
+        "date": "2024-01-01"
     }
 ]

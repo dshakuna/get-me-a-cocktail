@@ -6,7 +6,7 @@ type Props = {
 export function Container({ children }: Props) {
 
     return (
-        <div className="cocktail-container">
+        <div className="container">
             {children}
         </div>
     )

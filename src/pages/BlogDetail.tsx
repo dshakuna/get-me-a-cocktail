@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import BlogPosts from '../json/BlogPostData.json';
 import RelatedCocktails from '../components/RelatedCocktails';
-import CocktailNavbar from '../components/CocktailNavbar'; 
+import CocktailNavbar from '../components/HeaderNavbar'; 
 
 const PostDetail = () => {
     const { postId } = useParams<{ postId?: string }>();

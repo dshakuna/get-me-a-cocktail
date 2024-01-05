@@ -1,12 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Teko:wght@600&display=swap');
+@import '/src/styles/utils/variables.scss';
+
 body {
-    font-family: Arial, sans-serif;
-   
-  }
-  
-  .app-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: $primary-color;
-  }
-  
+    font-family: 'Monoton', sans-serif;
+    background: $bg-site !important;
+    color: #fff;
+}
+

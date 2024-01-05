@@ -1,10 +1,12 @@
 import { getRandomCocktails } from "../service/get-random-cocktail.ts";
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import '../styles/CocktailCard.scss';
 import { CocktailCardList } from "./CocktailCardList.tsx";
 import { Drink } from "../service/model/Drinks";
-import CocktailNavbar from './CocktailNavbar'; 
+import CocktailNavbar from './HeaderNavbar.tsx'; 
+import { Container } from "./Container";
+import '../styles/App.scss';
+import '../styles/components/CocktailCard.scss';
 
 
 export function CocktailList() {
@@ -49,7 +51,11 @@ export function CocktailList() {
     return (
         <>
             <CocktailNavbar />
-            <CocktailCardList cocktails={cocktails}/>    
+            <Container>
+                <div className="row">
+                    <CocktailCardList cocktails={cocktails}/>   
+                </div>
+            </Container>
         </>
     )
 }
