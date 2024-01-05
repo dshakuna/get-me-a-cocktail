@@ -15,7 +15,7 @@ const RelatedCocktails: React.FC<RelatedCocktailsProps> = ({ ingredient }) => {
     useEffect(() => {
         const fetchCocktails = async () => {
             const fetchedCocktails = await getCocktailsByIngredient(ingredient);
-            setCocktails(fetchedCocktails.drinks.slice(0, 3)); // Limita a 3 cócteles
+            setCocktails(fetchedCocktails.drinks.slice(0, 3)); 
         };
 
         fetchCocktails();

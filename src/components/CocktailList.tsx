@@ -16,7 +16,7 @@ export function CocktailList() {
         const fetchCocktails = async () => {
             try {
                 setIsLoading(true);
-                const result = await getRandomCocktails(5);
+                const result = await getRandomCocktails(6);
                 setCocktails(result.drinks);
                 setError(undefined)
             } catch (e) {

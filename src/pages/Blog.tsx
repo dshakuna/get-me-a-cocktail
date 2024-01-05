@@ -1,11 +1,14 @@
 import BlogPosts from '../json/BlogPostData.json';
 import BlogCard from '../components/BlogCard';
+import CocktailNavbar from '../components/CocktailNavbar'; 
 
 const PageBlog = () => {
     return (
-        <div className="container">
+        <>
+            <CocktailNavbar />
             <h1>Blog de Cócteles</h1>
-            <div className="row">
+            <div className="container">
+                <div className="row">
                 {BlogPosts.map(post => (
                     <BlogCard 
                         key={post.id}
@@ -17,6 +20,7 @@ const PageBlog = () => {
                 ))}
             </div>
         </div>
+        </>
     );
 };
 

@@ -13,7 +13,7 @@ export function CocktailCard({ cocktail }: Props) {
     }
 
     return (
-        <div className="card" onClick={handleClick} style={{ cursor: 'pointer' }}>
+        <div className="col-md-4" onClick={handleClick} style={{ cursor: 'pointer' }}>
             <img src={cocktail.strDrinkThumb + '/preview'} className="card-img-top" alt={cocktail.strDrink} />
             <div className="card-body">
                 <h5 className="card-title">{cocktail.strDrink}</h5>

@@ -17,12 +17,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ id, title, content, date }) => {
 
     return (
         <div className="col-md-4">
-            <div className="card" onClick={handleCardClick}>
-                <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{content}</p>
-                    <p className="card-text"><small className="text-muted">Publicado el {date}</small></p>
-                </div>
+            <div className="" onClick={handleCardClick}>
+                <h5 className="card-title">{title}</h5>
+                <p className="card-text">{content}</p>
+                <p className="card-text"><small className="text-muted">Publicado el {date}</small></p>
             </div>
         </div>
     );

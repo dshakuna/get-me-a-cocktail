@@ -1,5 +1,3 @@
-// service/getCocktailsByIngredient.ts
-
 import { DrinksData } from "./model/Drinks";
 
 export async function getCocktailsByIngredient(ingredient: string): Promise<DrinksData> {
