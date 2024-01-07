@@ -18,7 +18,7 @@ function App() {
     },
     {
       path: "/blog",
-      element: < PageBlog/>
+      element: <PageBlog/>
     },
     {
       path:"/blog/:postId",
