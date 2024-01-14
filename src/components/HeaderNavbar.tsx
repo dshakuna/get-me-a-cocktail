@@ -7,7 +7,7 @@ import { CocktailFinder } from "./CocktailFinder.tsx";
 import logo from '../assets/logo-3.jpg';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+export function HeaderNavbar() {
     return (
 
         <Navbar expand="lg" >
@@ -17,21 +17,19 @@ function NavBar() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
-                    <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll >
-                        <Nav.Link ><Link to='/'>Home</Link></Nav.Link>
-                        <Nav.Link><Link to='/cocktails'>Cocktails</Link></Nav.Link>
-                        <Nav.Link><Link to='/blog'>Blog</Link></Nav.Link>
-                        {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Recommendations</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Gin
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Pindorcha
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
-                        <Nav.Link><Link to='/contact'>Contact</Link></Nav.Link>
+                    <Nav variant="pills" className="me-auto my-2 my-lg-0" as="ul">
+                        <Nav.Item as="li">
+                            <Link to='/'>Home</Link>
+                        </Nav.Item>
+                        <Nav.Item as="li">
+                            <Link to='/cocktails'>Cocktails</Link>
+                        </Nav.Item>
+                        <Nav.Item as="li">
+                            <Link to='/blog'>Blog</Link>
+                        </Nav.Item>
+                        <Nav.Item as="li">
+                            <Link to='/contact'>Contact</Link>
+                        </Nav.Item>
                     </Nav>
                     <CocktailFinder />
                 </Navbar.Collapse>
@@ -39,5 +37,3 @@ function NavBar() {
         </Navbar>
     );
 }
-
-export default NavBar;

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { CocktailCardList } from "./CocktailCardList.tsx";
 import { Drink } from "../service/model/Drinks";
-import CocktailNavbar from './HeaderNavbar.tsx'; 
 import { Container } from "./Container";
 import '../styles/App.scss';
 import '../styles/components/CocktailCard.scss';
@@ -50,7 +49,6 @@ export function CocktailList() {
 
     return (
         <>
-            <CocktailNavbar />
             <Container>
                 <div className="row">
                     <CocktailCardList cocktails={cocktails}/>   

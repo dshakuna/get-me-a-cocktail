@@ -4,7 +4,6 @@ import { getCocktailDetails } from "../service/get-cocktail-details";
 import { useEffect, useState } from "react";
 import { DrinksData } from "../service/model/Drinks";
 import { CocktailDetailCard } from "./CocktailDetailCard";
-import CocktailNavbar from './HeaderNavbar'; 
 import { Container } from "./Container";
 
 export function CocktailDetail() {
@@ -54,7 +53,6 @@ export function CocktailDetail() {
 
     return (
         <>
-            <CocktailNavbar />
             <Container>
                 <div className="row">
                     <CocktailDetailCard cocktail={cocktail.drinks[0]} />

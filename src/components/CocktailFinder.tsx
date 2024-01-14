@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { getCocktailByName } from "../service/get-cocktail-by-name";
-import { useSearchContext } from './CocktailFinderSearch';
+import { useNavigate } from "react-router-dom";
+
+export const searchParamName = 'queryParam';
 
 export function CocktailFinder() {
+    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState("");
-    const { setSearchResults } = useSearchContext();
 
-    const handleButtonClick = async () => {
-        const result = await getCocktailByName(inputValue);
-        setSearchResults(result.drinks); 
+    const handleButtonClick = async (evt:any) => {
+        evt.preventDefault();
+        navigate(`/cocktails/search?${searchParamName}=${inputValue}`)
     };
 
     const handleOnChangeInput = (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,10 +17,10 @@ export function CocktailFinder() {
     };
 
     return (
-        <>
+        <form>
             <input placeholder="Find a drink" onChange={handleOnChangeInput} />
-            <button onClick={handleButtonClick}>Search</button>
-        </>
+            <button type="submit" onClick={handleButtonClick}>Search</button>
+        </form>
     );
 
 }

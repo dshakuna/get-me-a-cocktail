@@ -13,6 +13,7 @@ If not installed use [NVM](https://github.com/nvm-sh/nvm#install--update-script)
 
 ## Run the project
 
+- `cp .env.example .env.local` and fill with appropiate values
 - `npm install` : Install all dependencies described in `package.json`
 - `npm start` : Start a local server for development
 

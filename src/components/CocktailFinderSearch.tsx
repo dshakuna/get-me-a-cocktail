@@ -1,27 +1,64 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Drink } from '../service/model/Drinks';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Drink } from "../service/model/Drinks";
+import { getCocktailByName } from "../service/get-cocktail-by-name";
+import { Spinner } from "react-bootstrap";
+import { Container } from "./Container";
+import { CocktailCardList } from "./CocktailCardList";
+import { searchParamName } from "./CocktailFinder.tsx";
 
-type SearchContextType = {
-    searchResults: Drink[];
-    setSearchResults: React.Dispatch<React.SetStateAction<Drink[]>>;
-};
+export function CocktailFinderSearch() {
 
-const SearchContext = createContext<SearchContextType>({
-    searchResults: [],
-    setSearchResults: () => {}
-});
+    const [searchParams] = useSearchParams()
+    const [isLoading, setIsLoading] = useState(false)
+    const [cocktails, setCocktails] = useState<Drink[]>([])
+    const [error, setError] = useState<string | undefined>()    
 
-export const useSearchContext = () => useContext(SearchContext);
-type SearchProviderProps = {
-    children: ReactNode;
-};
+    const query = searchParams.get(searchParamName) || ""
+    
+    useEffect(() => {
+        const fetchCocktails = async () => {
+            try {
+                // result.drinks != null ? result.drinks : []  -> ternary operator
+                setIsLoading(true);
+                const result = await getCocktailByName(query);
+                setCocktails(result.drinks ?? []);
+                setError(undefined)
+            } catch (e) {
+                const error = e as Error
+                setError(error.message)
+            } finally {
+                setIsLoading(false);
+            }
+        };
 
-export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
-    const [searchResults, setSearchResults] = useState<Drink[]>([]);
+        fetchCocktails();
+    }, [query]);
+
+    if (isLoading) {
+        return <Spinner animation="border" />;
+    }
+
+    if (error) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                Hubo un error invocando el api: {error}
+            </div>
+        )
+    }
 
     return (
-        <SearchContext.Provider value={{ searchResults, setSearchResults }}>
-            {children}
-        </SearchContext.Provider>
-    );
-};
+        <>
+            <Container>
+                <div className="row">
+                    {
+                        cocktails.length > 0 
+                        ? <CocktailCardList cocktails={cocktails}/>   
+                        : <span>No hay datos para: {query}</span>
+                    }
+                    
+                </div>
+            </Container>
+        </>
+    )
+}
