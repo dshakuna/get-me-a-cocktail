@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
     "bootstrap": "^5.3.2",
     "emailjs-com": "^3.2.0",
     "node-sass": "^9.0.0",

@@ -7,6 +7,7 @@ import './styles/App.scss';
 import { CocktailFinderSearch } from './components/CocktailFinderSearch';
 import ContactForm from './modules/contact/ContactForm';
 import { BaseLayout } from './modules/layout/BaseLayout';
+import { FavoritesPage } from './modules/cocktail/Favorites';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +41,10 @@ function App() {
         {
           path:"/contact",
           element: <ContactForm/>
+        },
+        {
+          path:"/favorites",
+          element: <FavoritesPage/>
         },
       ]
     },

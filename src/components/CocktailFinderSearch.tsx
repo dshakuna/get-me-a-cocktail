@@ -6,16 +6,17 @@ import { Spinner } from "react-bootstrap";
 import { Container } from "./Container";
 import { CocktailCardList } from "./CocktailCardList";
 import { searchParamName } from "./CocktailFinder.tsx";
+import { CocktailCardWithFavorite } from "./CocktailCardWithFavorite.tsx";
 
 export function CocktailFinderSearch() {
 
     const [searchParams] = useSearchParams()
     const [isLoading, setIsLoading] = useState(false)
     const [cocktails, setCocktails] = useState<Drink[]>([])
-    const [error, setError] = useState<string | undefined>()    
+    const [error, setError] = useState<string | undefined>()
 
     const query = searchParams.get(searchParamName) || ""
-    
+
     useEffect(() => {
         const fetchCocktails = async () => {
             try {
@@ -52,11 +53,13 @@ export function CocktailFinderSearch() {
             <Container>
                 <div className="row">
                     {
-                        cocktails.length > 0 
-                        ? <CocktailCardList cocktails={cocktails}/>   
-                        : <span>No hay datos para: {query}</span>
+                        cocktails.length > 0
+                            ? cocktails.map(cocktail => (
+                                <CocktailCardWithFavorite key={cocktail.idDrink} cocktail={cocktail}/>
+                            ))
+                            : <span>No hay datos para: {query}</span>
                     }
-                    
+
                 </div>
             </Container>
         </>

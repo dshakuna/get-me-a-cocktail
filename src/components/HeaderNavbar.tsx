@@ -28,9 +28,13 @@ export function HeaderNavbar() {
                             <Link to='/blog'>Blog</Link>
                         </Nav.Item>
                         <Nav.Item as="li">
-                            <Link to='/contact'>Contact</Link>
+                            <Link to='/favorites'>Favorites</Link>
                         </Nav.Item>
+                        <Nav.Item as="li">
+                            <Link to='/contact'>Contact</Link>
+                        </Nav.Item>s
                     </Nav>
+
                     <CocktailFinder />
                 </Navbar.Collapse>
             </Container>
