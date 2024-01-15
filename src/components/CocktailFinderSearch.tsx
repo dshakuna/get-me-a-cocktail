@@ -4,7 +4,6 @@ import { Drink } from "../service/model/Drinks";
 import { getCocktailByName } from "../service/get-cocktail-by-name";
 import { Spinner } from "react-bootstrap";
 import { Container } from "./Container";
-import { CocktailCardList } from "./CocktailCardList";
 import { searchParamName } from "./CocktailFinder.tsx";
 import { CocktailCardWithFavorite } from "./CocktailCardWithFavorite.tsx";
 
